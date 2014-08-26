@@ -22,16 +22,22 @@ public class Main {
         library.borrowBook("Mort");
         library.borrowBook("BFG");
 
-        library.listAvailableBooks();
+        boolean isBFGAvailable = library.isBookWithNameAvailable("BFG");
+        System.out.println("BFG availability is " + isBFGAvailable);
+
+        boolean isMortAvailable = library.isBookWithNameAvailable("Mort");
+        System.out.println("Mort availability is " + isMortAvailable);
+
 
         System.out.println();
 
 
-        library.borrowBook("Mort");
-        library.listAvailableBooks();
 
-       // boolean isXXXAvailable = library.isBookWithNameAvailable("XXX");
-       // System.out.println("XXX availability is " + isXXXAvailable);
+        library.returnBook("Mort");
+        isMortAvailable = library.isBookWithNameAvailable("Mort");
+        System.out.println("Mort availability is " + isMortAvailable);
+
+
 
 
 
