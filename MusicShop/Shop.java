@@ -26,7 +26,6 @@ public class Shop {
     	double cheapestPrice = 9.99;
     	String cheapestCD = null;
 
-    	System.out.print("Cheapest CD: ");
     	for (int i=0; i<cds.size(); i++){
     		CD cd = cds.get(i);
     		if (cd.getPrice()<cheapestPrice){
@@ -37,6 +36,36 @@ public class Shop {
     	}
     	return cheapestCD;
     	
+
+    }
+
+    public double getPriceByTitle(String songTitle){
+        double cheapest = 0.00;
+
+        for (int i=0; i<cds.size(); i++){
+            CD cd = cds.get(i);
+            if (cd.getSongTitle()==songTitle){
+                 cheapest = cd.getPrice();
+            }
+
+        }
+
+        return cheapest;
+
+    }
+
+    public String getArtistByTitle(String songTitle){
+        String artist = null;
+
+        for (int i=0; i<cds.size(); i++){
+            CD cd = cds.get(i);
+            if (cd.getSongTitle()==songTitle){
+                artist = cd.getArtist();
+            }
+
+        }
+
+        return artist;
 
     }
 

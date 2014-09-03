@@ -4,9 +4,9 @@ public class CD {
 	private double price;
 
 	//Constructor
-	public CD(String songTitle, String artist, double price){
-        this.songTitle = songTitle;
+	public CD(String artist, String songTitle, double price){
         this.artist = artist;
+        this.songTitle = songTitle;
         this.price = price;
 
     }
