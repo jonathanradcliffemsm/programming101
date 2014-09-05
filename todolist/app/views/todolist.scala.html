@@ -1,0 +1,21 @@
+@(message: String, todoItems: List[String])
+
+@main("To Do List") {
+
+	<div>
+
+		<h1>@message</h1>
+
+		<form action="addItem" method="POST">
+			<input type="text" name="todoitem"/>
+			<input type="submit" name="submit" value="Add Item"/>
+		</form>
+
+		<ul>
+		@for(todoItem <- todoItems){
+			<li>@todoItem</li>
+		}
+		</ul>
+	</div>
+}
+
