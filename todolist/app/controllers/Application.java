@@ -25,11 +25,11 @@ public class Application extends Controller {
     	DynamicForm requestData = Form.form().bindFromRequest();
 
     	
-    	//String todoItem = requestData.get("todoitem");
+    	String todoItem = requestData.get("todoitem");
 
     	System.out.println("Adding item " + todoItem);
 
-    	todoItemStore.addItem(todoItem);
+    	//todoItemStore.addItem(todoItem);
 
     	return redirect("/todolist");
     }
