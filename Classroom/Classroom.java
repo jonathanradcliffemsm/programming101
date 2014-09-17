@@ -6,71 +6,30 @@ import java.util.*;
 
 public class Classroom {
 
-    private static List<Student> students;
+    private static ArrayList<Student> students;
 
     public Classroom(){
         students = new ArrayList<Student>();
     }
 
-    public void addStudent(String name, int score){
-        Student student = new Student (name, score);
+    public void addStudent(Student student){
         students.add(student);
     }
 
-    public void listScores(){
-        System.out.println("Student scores:");
-        for (int i=0; i<students.size(); i++){
-            Student student = students.get(i);
-            System.out.println(student.getName() + " scored " + student.getScore() + "%");
-        }
-    }
 
-
-    public int getHighestIndex(){
+    public Student getHighestStudent(){
         int highestScore = 0;
-        int highestIndex = 0;
+        Student highestStudent = null;
         for (int i=0; i<students.size(); i++){
             Student student = students.get(i);
             if (student.getScore()>highestScore){
-                highestIndex = i-1;
+                highestScore = student.getScore();
+                highestStudent = student;
 
             }
 
         }
-        return highestIndex;
-    }
-
-    public int getScoreByIndex(int index){
-        Student student = students.get(index);
-        int score = student.getScore();
-        return score;
-    }
-
-    public String getNameByIndex(int index){
-        Student student = students.get(index);
-        String name = student.getName();
-        return name;
-    }
-
-    public String getHighestScorer(){
-
-        int highestScore = 0;
-        String highestScorer = null;
-
-        for (int i=0; i<students.size(); i++){
-            Student student = students.get(i);
-            if (student.getScore()>highestScore){
-                highestScore=student.getScore();
-                highestScorer=student.getName();
-            }
-
-        }
-
-        String scoreString = Integer.toString(highestScore);
-        highestScorer = highestScorer + " " + Integer.toString(highestScore) + "%";
-        return highestScorer;
-
-
+        return highestStudent;
     }
 
 

@@ -2,8 +2,8 @@
  * Created by jonathan.radcliffe on 11/09/2014.
  */
 public class Student {
-    private String name;
-    private int score;
+    public String name;
+    public int score;
 
 
     //Constructor

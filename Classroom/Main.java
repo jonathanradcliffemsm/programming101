@@ -1,20 +1,19 @@
 import java.util.*;
 
 public class Main {
-	public static void main(String[] args){
 
-        Classroom classroom = new Classroom();
+        public static void main(String[] args){
 
-        classroom.addStudent("Alex", 85);
-        classroom.addStudent("James", 92);
-        classroom.addStudent("Katy", 65);
-        classroom.addStudent("John", 74);
-        classroom.addStudent("Sarah", 96);
-        classroom.addStudent("Dan", 45);
+                Classroom classroom = new Classroom();
 
-        int highestIndex = classroom.getHighestIndex();
+                classroom.addStudent(new Student("Alex", 85));
+                classroom.addStudent(new Student("James", 92));
+                classroom.addStudent(new Student("Katy", 65));
+                classroom.addStudent(new Student("John", 74));
+                classroom.addStudent(new Student("Sarah", 96));
+                classroom.addStudent(new Student("Dan", 45));
 
-        System.out.println("The student with the highest score is" + classroom.getNameByIndex(highestIndex) + " with " + classroom.getScoreByIndex(highestIndex) + "%");
-
+                Student highestStudent = classroom.getHighestStudent();
+                System.out.println("The student with the highest score is " + highestStudent.name + " with " + highestStudent.score + "%");
 	}
 }
